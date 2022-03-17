@@ -1,4 +1,4 @@
-var hostUrl = "http://gloriouspast.gitee.io/easywebide";
+var hostUrl = "http://atreep.github.io/easywebide";
 var videoUrl = hostUrl+"/videos/";
 var serverUrl = "https://venter.coding.net/p/gloriouspast/d/gloriouspast/git/raw/master/";
 var boxUrl = serverUrl+"box/";
