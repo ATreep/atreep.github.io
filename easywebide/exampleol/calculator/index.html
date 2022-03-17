@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+<link href="favicon.ico" rel="icon" >
+<title>JS计算器</title>
+</head>
+<style>
+body
+{
+  text-align:center;
+  padding:10px;
+  margin:0px;
+}
+#result
+{
+  text-align:right;
+}
+.nums
+{
+  background-color:#C5C5C5;
+  font-size:20px;
+}
+.fun
+{
+  background-color:#006CFF;
+  color:#FFFFFF;
+}
+
+
+</style>
+
+<body>
+
+<h1><b><div id="result" title="显示" >0</div></b></h1>
+
+<table border="0" cellpadding="5" width="100%">
+<tr class="nums">
+<td id="n1">1</td>
+<td id="n2">2</td>
+<td id="n3">3</td>
+<td class="fun" id="bs" onclick="backspace()">Bs</td>
+</tr>
+<tr class="nums">
+<td id="n4">4</td>
+<td id="n5">5</td>
+<td id="n6">6</td>
+<td class="fun" id="n10">+</td>
+</tr>
+<tr class="nums">
+<td id="n7">7</td>
+<td id="n8">8</td>
+<td id="n9">9</td>
+<td class="fun" id="n11">-</td>
+</tr>
+<tr class="nums">
+<td id="clear" onclick="cResult()">C</td>
+<td id="n0">0</td>
+<td style="background-color:#FF8A2E;" onclick="getResult()">=</td>
+<td class="fun" id="n12">*</td>
+</tr>
+<tr class="nums">
+<td id="n14">(</td>
+<td id="n15">)</td>
+<td id="n16">.</td>
+<td class="fun" id="n13">/</td>
+</tr>
+</table>
+
+
+</body>
+<script src="main.js" >
+</script>
+<hr>
+<h6><a href="source.zip" style="color:#009AFF;">下载源码</a></h6>
+<h6>Copyright &copy; 2020 GloriousPast | EasyWeb在线示例</h6>
+</html> 

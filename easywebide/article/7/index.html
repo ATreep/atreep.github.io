@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../imgs/easyweb.png" rel="shortcut icon">
+	<link rel="icon" href="../../../imgs/easyweb.png">
+	<title>EasyWeb IDE • 公告与文档</title>
+    <link href="../article.css" rel="stylesheet">
+    <script src="../../scripts/example_inf.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="title">
+            Android System WebView 版本过低或不可用的解决方案
+        </div>
+        <div class="subtitle">
+            2021.2.18 修改后发布 | Treep
+        </div>
+        <article class="article">
+            <div class="add-msg-out">
+                <div class="add-msg-title">关注事项</div>
+                <li>
+                    本篇所提及的解决方案仅适用于 Android 5.0 及以上用户。部分适用于 Android 7.0 及以上用户。
+                </li>
+                <li>
+                    我们在 EasyWeb IDE 2.5.0 版本中加入了 Android System WebView 检测机制，这意味着旧版本用户可能遇到不友好的崩溃页面，但此篇文章仍可为旧版本用户带来帮助。
+                </li>
+            </div>
+            <br>
+            <div class="stitle">什么是 Android System WebView ?</div>
+            <div class="satc">
+                Android System WebView 是 Android OS 的一个可供其他 Android 应用调用的组件。在 Android 5.0 及更高版本，你可以通过系统应用商店更新此组件。EasyWeb
+                IDE 非常依赖于此组件，当 Android System WebView 出现问题时，EasyWeb 的部分功能可能无法正常使用甚至崩溃。
+            </div>
+            <span class="stitle">提示 “你的系统组件版本过低”</span>
+            <div class="satc">
+                当前系统的 Android System WebView 长期未更新，其版本低于 80.x。
+                <br>
+                <div id="myver" class="add-msg">
+                    <div class="add-msg-title" style="background-image: url('../../../imgs/alert_icon.svg');">
+                        当前浏览器内核版本检测报告
+                    </div>
+                </div>
+                <br>
+                Android System WebView 在 Android 4.4 及以上版本为单独的系统组件，你可以<a href="javascript:void(0)"
+                onclick="javascript:window.open('https://gloriouspast.lanzoui.com/b01bo3ekj')">点击这里</a>或在其他位置下载
+            Android System WebView 高版本安装包，并使用软件包安装程序更新。
+            <br>
+            请注意，你的系统可能无法直接更新 Android System WebView，请参照以下方案。
+                <br>
+                对于 Android 6.0 或以下用户：你可以<a href="javascript:void(0)" onclick="javascript:window.open('https://cn.bing.com/search?q=Android6.0+%E6%9B%B4%E6%96%B0Webview')">点此查阅解决方案</a>。
+                <br>
+                对于第三方厂商系统：为保证安全性，其可能限制了 Android System WebView 的升级，请尝试关闭系统优化。
+                <br>
+                若仍无法解决问题，可在「功能配置与支持」对话框中暂时禁用 [启动应用时检测 Android System WebView 并发出警告]。
+            </div>
+            <span class="stitle">提示 “EasyWeb 无法获取你的 Android System WebView 版本” 或 “EasyWeb 无法使用 Android System
+                WebView”</span>
+            <div class="satc">
+                我们猜测你可能正在使用非原生或类原生系统；或手动更改了 “WebView 实现” 设置；或安装了 Google Chrome。
+                <br>
+                <br>
+                若您为 Android 7.0 或以上用户，你可以尝试如下操作。
+                <br>
+                打开 “系统设置”，点击 [系统信息] 或 [关于] 按钮，连续多次点击 [系统版本] 或 [OS 版本] 项直至弹出 “你已经是开发者” 提示。
+                <br>
+                进入 “开发者选项” 页面，点击 [WebView 实现] 按钮，选择高版本的 [Android System WebView] 项。
+            </div>
+            <span class="stitle">仍无法解决问题?</span>
+            <div class="satc">
+                推荐你加入 “EasyWeb IDE 用户交流” 群，更方便地交流你所遇到的麻烦。<a href="javascript:void(0)"
+                    onclick="javascript:window.open('https://jq.qq.com/?_wv=1027&k=n91bg1DW')">加入用户交流群</a>。
+            </div>
+        </article>
+    </div>
+    <script>
+        var myverDiv = document.getElementById("myver");
+        try {
+            var ua = navigator.appVersion;
+            var uaArr = (ua.split("Safari")[0]).split("/");
+            var ver = uaArr[uaArr.length - 1].split(" ")[0];
+            var isHighVersion = parseInt(ver.split(".")[0]) > 80;
+
+            myverDiv.style.backgroundColor = isHighVersion ? "#00AC2E" : "#AC0000";
+
+            myverDiv.innerHTML += isHighVersion ? "恭喜！<br>我们检测到您当前浏览器内核版本为 " + ver + " ，已达到我们所期望的水平。<br>若 EasyWeb IDE 仍发出此类警告，请尝试以下方案。" : "很抱歉！<br>我们检测到您当前浏览器内核版本为 " + ver + " ，未达到我们所期望的水平。<br>请尝试以下方案以修复此问题。";
+        }
+        catch (error) {
+            myverDiv.style.display = "none";
+        }
+    </script>
+    <script src="../article_ct.js"></script>
+</body>
+
+</html>

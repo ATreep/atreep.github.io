@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+	<link href="../../imgs/easyweb.png" rel="shortcut icon">
+	<link rel="icon" href="../../imgs/easyweb.png">
+	<title>正在重定向</title>
+</head>
+
+<body>
+	<script>
+		window.onload = function () {
+			var url = "/index.html";
+			var hash = window.location.hash;
+			if (hash.indexOf("#") != -1) {
+				url = hash.split("#")[1] + url;
+
+				window.location.href = url;
+			}
+		};
+	</script>
+</body>
+
+</html>

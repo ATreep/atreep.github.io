@@ -1,0 +1,1282 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../imgs/easyweb.png" rel="shortcut icon">
+	<link rel="icon" href="../../../imgs/easyweb.png">
+	<title>EasyWeb IDE • 公告与文档</title>
+    <link href="../article.css" rel="stylesheet">
+    <script src="../../scripts/example_inf.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js' integrity='sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js'></script>
+</head>
+
+<body class="mdui-theme-layout-auto">
+    <div>
+        <div class="title">
+            EasyApp.js API 表
+        </div>
+        <div class="subtitle">
+            2022.1.28 更新并发布 | Treep
+        </div>
+        <article class="article">
+            <div class="add-msg-out">
+                <div class="add-msg-title">关注事项</div>
+                <li>
+                    EasyWeb IDE 2.6.5 版本及以上到 2.6.7 版本以下将 EasyApp.js 称做 JSAppActions。
+                </li>
+            </div>
+            <br>
+            <div class="stitle">EasyApp.js 简介</div>
+            <div class="satc">
+                EasyApp.js 是一个 JS API，旨在帮助仅熟悉前端的人员轻松打造高度原生化的 Web 转制 Android APP。<b style="color: red;">EasyApp.js
+                    仅适用于 EasyWeb IDE 的「转换为应用」功能。</b>
+            </div>
+            <span class="stitle">无需学习，直接上手！</span>
+            <div class="satc">
+                <div>
+                    我们为 EasyWeb IDE 配备了强大的 快捷插入 功能。因此，你可以在编辑 HTML 或 JS 时点击页面上方功能栏的 [插入] 按钮，一键插入为您预置的 EasyApp.js 语句。
+                    <br>
+                    你也可以<a onclick="javascript:window.open('../../index.html#9')" href="javascript:void(0)">点击此处</a>查看我们为你准备的 EasyApp.js（2.6.x） 基础使用演示视频。
+                </div>
+            </div>
+            <span class="stitle">EasyApp.js API 表</span>
+            <div class="satc">
+                下表适用于 JSAppActions 1.33 。
+                <br>
+                <br>
+                <span style="font-weight: bold;font-style: italic;">File 类 文件系操作</span>
+                <br>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.newFile(path)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>返回一个新 File 类实例。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>String path：文件路径。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>File：File 类实例</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+//在 SD 卡中新建文件
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var file=File.newFile("/sdcard/demo.txt");//实例化
+    file.createFile(true);
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.createFile(canMakeDirectories)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>创建文件。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>boolean canMakeDirectories：若父目录或更上级目录不存在，是否创建目录后再创建文件。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.createDir(canMakeDirectories)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>创建文件夹。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>boolean canMakeDirectories：若父目录或更上级目录不存在，是否创建目录后再创建文件夹。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.deleteFile(targetFile)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>删除文件（夹）。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>File targetFile：要删除的文件或目录的 File 实例。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+//删除 SD 卡中文件
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var file=File.newFile("/sdcard/demo.txt");//实例化
+    File.deleteFile(file);
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getName()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标文件的文件名。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标文件的文件名。</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+//获取 SD 卡文件的文件名
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var file=File.newFile("/sdcard/demo.txt");//实例化
+    var name=file.getName();
+    //name："demo.txt"
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getPath()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标文件的完整路径。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标文件的完整路径。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getParent()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标文件的父目录完整路径。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标文件的父目录完整路径。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getParentFile()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标文件的父目录 File 实例。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标文件的父目录 File 实例。</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+//获取 SD 卡文件的父目录文件名
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var file=File.newFile("/sdcard/demo.txt");//实例化
+    var parentFile=file.getParentFile();
+    var parentName=parentFile.getName();
+    //parentName："sdcard"
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getType()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标文件的拓展名。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标文件的拓展名（小写字母组成）。若无拓展名则为 null。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.copy(file,targetFile)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>复制指定文件至指定目录。请注意，这是一个耗时操作，可能使主线程堵塞。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>
+                                    File file：待复制文件的 File 实例。
+                                    <br>
+                                    File targetFile：复制后的 File 实例。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+//复制 SD 卡的 demo.txt 文件至 Download 目录下
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var file=File.newFile("/sdcard/demo.txt");//实例化
+    var targetFile=File.newFile("/sdcard/Download/demo.txt");//实例化
+    
+    targetFile.getParentFile.createDir(true);//若目标目录不存在则创建
+
+    File.copy(file,targetFile);
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.isFile()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>判断 File 实例是否为文件。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean：是文件为 true；是文件夹为 false。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.isDir()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>判断 File 实例是否为文件夹。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean：是文件夹为 true；是文件为 false。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.exists()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>判断 File 实例的目标文件是否存在。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean：File 实例的目标文件是否存在。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.renameTo(targetFile)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>将 File 实例的目标文件重命名为指定名称。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>File targetFile：重命名后的 File 实例。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+//重命名 SD 卡下的 demo.txt 为 note.txt
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var file=File.newFile("/sdcard/demo.txt");//实例化
+    var targetFile=File.newFile("/sdcard/note.txt");//实例化
+
+    var a=targetFile.exists();
+
+    file.renameTo(targetFile);
+
+    var b=targetFile.exists();
+    //a：false；b：true
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.read()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>读取 File 实例的目标文件内容。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标文件内容。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.write(text)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>将指定的内容写入 File 实例的目标文件中。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>String text：写入文本。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.listNames()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标目录下所有文件名的数组的字符串。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标目录下所有文件名的数组的字符串。</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var sdcard=File.newFile(System.getStoragePath());//实例化
+    var namesArray=eval(sdcard.listNames());
+
+    var aFileName=namesArray[0];
+    var bFileName=namesArray[1];
+    var cFileName=namesArray[2];
+    //示例
+    //aFileName："Android"；
+    //bFileName："DCIM"；
+    //cFileName："Download"
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.listFiles()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取 File 实例的目标目录下所有文件路径的数组的字符串。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：File 实例的目标目录下所有文件路径的数组的字符串。</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var sdcard=File.newFile(System.getStoragePath());//实例化
+    var pathsArray=eval(sdcard.lisFiles());
+
+    var aFilePath=pathsArray[0];
+    var bFilePath=pathsArray[1];
+    var cFilePath=pathsArray[2];
+    //示例
+    //aFilePath"/sdcard/Android"；
+    //bFilePath"/sdcard/DCIM"；
+    //cFilePath"/sdcard/Download"
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getAppFilesDir()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取应用专属目录的 File 实例。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：应用专属目录的 File 实例。例如：getPath()="/data/data/com.venter.app/files"
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.getAppCacheDir()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取应用缓存目录的 File 实例。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：应用缓存目录的 File 实例。例如：getPath()="/data/data/com.venter.app/cache"
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>File.copyFileFromSite(sitePath,targetFile)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>将站点目录下的指定文件复制到 targetFile 所对应的位置。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>
+                                    String sitePath：相对于站点根目录的文件相对路径。
+                                    <br>
+                                    File targetFile：复制到设备上的目标位置的 File 实例。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+if(!System.isHaveStoragePermission())
+{
+    //如果没有存储权限需先申请授权
+    System.showRequestStoragePermissionWindow();
+}
+else
+{
+    var sitePath="doc/myfile";//站点目录下的 doc 文件夹中的 myfile 文件
+    var target=File.newFile(System.getStoragePath()+"/myfile");//实例化
+    File.copyFileFromSite(sitePath,target);
+    
+    target.exists();//返回 true
+    
+}
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <span style="font-weight: bold;font-style: italic;">UI 类 用户界面系操作</span>
+                <br>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.showToast(msg,isLongDuration)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>显示一条 Toast 弹出消息。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>
+                                    String msg：显示信息；
+                                    <br>
+                                    boolean isLongDuration：是否使 Toast 持续显示较长时间。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.setTitle(text)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>设置标题栏文本内容。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>
+                                    String text：标题。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.getTitle()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取标题栏文本内容。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：当前标题栏内容。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.setTitleVisible(isVisible)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>设置标题栏是否显示。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>boolean isVisible：是否显示标题栏。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.getTitleVisible()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取标题栏是否显示。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean：标题栏是否显示。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.getStatueBarHeight()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取状态栏高度。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>int：状态栏高度值（单位：PX）。</td>
+                            </tr>
+                            <tr>
+                                <th>示例</th>
+                                <td>
+                                    <div>
+                                        <pre>
+                                            <code class="lang-javascript">
+setTitleVisible(false);//使标题栏隐藏，网页填充至整个页面（包括状态栏）
+//为使网页主体内容不与状态栏重叠，需设置间距
+document.body.style.padding=UI.getStatueBarHeight()+"px";
+                                            </code>
+                                        </pre>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.showProgress(inf)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>显示加载界面。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>String inf：加载界面的文字说明。若为 null 则不显示文字说明。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.hideProgress()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>隐藏加载界面。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.setTitleColor(colorCode)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>设置标题栏背景颜色。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>String colorCode：背景颜色代码。如：#43ACFC。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.getTitleColor()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取标题栏背景颜色。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：背景颜色代码。如：#43ACFC。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.clearHistory()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>
+                                    清除浏览历史记录。
+                                    <br>
+                                    执行此操作后，点击返回按钮将不再跳转到上一页面，而是直接推出应用。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.goBack()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>
+                                    返回上一页面。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.canGoBack()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>
+                                    获取浏览器是否有上一历史浏览页面。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean：是否有上一历史浏览页面。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>UI.allowSkip( isAllowSkip )</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>
+                                    允许通过页面的超链接跳转到其他页面。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>boolean isAllowSkip：是否允许通过页面的超链接跳转到其他页面。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <br>
+                <span style="font-weight: bold;font-style: italic;">System 类 系统交互系操作</span>
+                <br>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>System.isHaveStoragePermission()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>判断是否拥有存储权限，即 WRITE_EXTERNAL_STORAGE 权限。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean：是否拥有存储权限。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>System.showRequestStoragePermissionWindow()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>弹出申请存储权限窗口（若已授权可能不会弹出）。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>System.getStoragePath()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>获取内部存储（SD 卡）路径。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>String：内部存储路径，一般为”/storage/emulated/0“。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>System.startApp(packageName)</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>启动指定应用，若应用不存在会引发异常。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>String packageName：应用包名。如：com.venter.app。</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>boolean: 是否打开成功。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>System.exitApp()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>关闭此应用。</td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="mdui-table-fluid">
+                    <table class="mdui-table mdui-table-hoverable">
+                        <tbody>
+                            <tr>
+                                <th>方法</th>
+                                <td>System.clearData()</td>
+                            </tr>
+                            <tr>
+                                <th>描述</th>
+                                <td>
+                                    清除所有浏览器数据。
+                                    <br>
+                                    执行此操作后，应用产生的所有 Cookies 及加载缓存等都会被清除。
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>参数</th>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <th>返回值</th>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+    </div>
+    <script src="../article_ct.js"></script>
+</body>
+
+</html>

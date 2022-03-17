@@ -1,0 +1,183 @@
+@import"https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css";
+@import"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/atom-one-dark.min.css";
+
+@font-face {
+    font-family: 'google';
+    src: url("../fonts/google.ttf");
+}
+
+@font-face {
+    font-family: 'sourceCodePro';
+    src: url("../fonts/source-code-pro/SourceCodePro-Regular.ttf");
+}
+
+body {
+    font-family: "google";
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    line-height: 20px;
+    color: rgb(78, 78, 78);
+    overflow-x: hidden;
+}
+
+code {
+    font-family: 'sourceCodePro';
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(0, 132, 255);
+}
+a:active {
+    text-decoration: none;
+}
+
+a:link {
+    color: rgb(0, 132, 255);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.headcard{
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-size: larger;
+}
+
+.card {
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 4px;
+    text-align: left;
+    padding: 15px;
+    width: auto;
+}
+.titlebar {
+    text-align: left;
+    padding: 10px;
+    padding-left: 20px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0px;
+}
+
+.picbtn{
+ opacity: 1;
+}
+.picbtn:hover{
+    opacity: 0.5;
+}
+
+.comment{
+    color: gray;
+    font-style: italic;
+}
+
+.adjustablebtn{
+    border-radius: 10px;
+    text-align: center;
+    margin: 4px;
+    background-color: rgb(0, 132, 255);
+    cursor: pointer;
+    color: white;
+    padding: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently not supported by any browser */
+}
+
+.adjustablebtnpanel{
+    line-height: 80px;
+}
+
+.copyrightblock{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 100px;
+    text-align: center;
+    width:auto; 
+    display:inline-block !important; 
+    display:inline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently not supported by any browser */
+}
+
+.title{
+    font-weight: lighter;
+    font-size: xx-large;
+    padding-bottom: 50px;
+    line-height: 35px;
+}
+
+.stitle{
+    font-weight: bold;
+    font-style: normal;
+}
+
+.aditem{
+    border-radius: 10px;
+    margin: 4px;
+    text-align: left;
+    padding: 15px;
+    width: auto;
+}
+
+.cannotselect{
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently not supported by any browser */
+}
+
+@media (prefers-color-scheme: dark) 
+{
+    body {
+        background-color: rgb(58, 58, 58);
+        color: white;
+    }
+    
+    .copyrightblock{
+        background-color: white;
+        color: black;
+    }
+    
+}

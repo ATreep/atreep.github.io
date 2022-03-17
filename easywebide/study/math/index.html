@@ -1,0 +1,367 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport"
+        content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <title>我的私人文包·数学</title>
+    <style>
+        @font-face {
+            font-family: 'dx';
+            src: url("../../fonts/dx.ttf");
+        }
+
+        body {
+            font-family: "dx";
+            position: relative;
+            padding: 30px;
+            background-color: burlywood;
+            color: black;
+        }
+
+        code {
+            font-family: 'dx';
+            color: rgb(122, 0, 0);
+            font-weight: bolder;
+            font-style: italic;
+            font-size: smaller;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            margin: 10px;
+            padding: 20PX;
+        }
+
+        .button {
+            border-radius: 10px;
+            background-color: darkgrey;
+            padding: 10px;
+            text-align: center;
+            font-size: medium;
+            color: black;
+            cursor: pointer;
+        }
+
+        .article {
+            margin-left: 10px;
+            font-size: small;
+        }
+
+        .cc-article {
+            margin-left: 20px;
+            font-size: small;
+        }
+
+        .a-article {
+            margin-left: 30px;
+            font-size: small;
+        }
+
+        .b-article {
+            margin-left: 40px;
+            font-size: small;
+        }
+
+        .ib {
+            font-style: italic;
+            font-weight: bold;
+            font-size: x-small;
+        }
+
+        .div {
+            background-color: blanchedalmond;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px 0.5px #0000002f;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: rgb(0, 132, 255);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        a:link {
+            color: rgb(0, 132, 255);
+            text-decoration: none;
+        }
+
+        .menu_title{
+            font-size: medium;
+            padding: 10px;
+        }
+        .menu_title_s{
+            font-size: small;
+            padding: 10px;
+        }
+        .picture{
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        function showPic(path)
+        {
+            var html="<dialog open style='text-align: center;padding: 10px'><div stydy='width: 100%;text-align: center;'><img width='"+document.documentElement.clientWidth*(4/5)+"px' src="+path+"></div><div style='text-align:right'><a href='javascript:void(0)' onclick='javascript:document.getElementById(\"img_div\").innerHTML=\"\"'>关闭</a></div></dialog>";
+            document.getElementById("img_div").innerHTML=html;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="img_div" style="position: fixed;width: 100%;text-align: center;"></div>
+    <h1>数学</h1>
+    <div>
+        <h3>目录</h3>
+        <br>
+        <div class="cc-article">
+            <div class="menu_title"><a href="#1">●函数值域</a></div>
+            <div class="a-article">
+                <div class="menu_title_s"><a href="#1.1">●“括号”内变化（抽象函数）——伸缩平移值域不变</a></div>
+                <div class="menu_title_s"><a href="#1.2">●常数/函数——极限</a></div>
+                <div class="menu_title_s"><a href="#1.3">●半次+半次——前后次数一样，整体平方</a></div>
+                <div class="menu_title_s"><a href="#1.4">●两类相加——分别画图</a></div>
+                <div class="menu_title_s"><a href="#1.5">●一次+半次——凑半次 </a></div>
+                <div class="menu_title_s"><a href="#1.6">●一次比一次——值域≠一次比  </a></div>
+            </div>
+            <div class="menu_title"><a href="#2">●三角恒等变换公式集</a></div>
+            <div class="menu_title"><a href="#3">●向量</a></div>
+            <div class="a-article">
+                <div class="menu_title_s"><a href="#3.1">●两向量垂直定则</a></div>
+                <div class="menu_title_s"><a href="#3.2">●两向量平行定则</a></div>
+                <div class="menu_title_s"><a href="#3.3">●投影式的变形</a></div>
+                <div class="menu_title_s"><a href="#3.4">●向量的余弦定理</a></div>
+                <div class="menu_title_s"><a href="#3.5">●向量的正弦定理</a></div>
+            </div>
+
+        </div>
+
+    </div>
+    <div>
+        <!-- 正文 -->
+        <div>
+            <a name="1"></a>
+            <h3>函数值域</h3>
+            <div class="article">
+                <div class="div">
+                    <a name="1.1"></a>
+                    1.“括号”内变化（抽象函数）——伸缩平移值域不变
+                    <div class="cc-article">
+                        <div class="ib">已知 y=f(x) 的值域是[0,3]，则函数 F(x)=2-f(x-3) 的值域是什么？</div>
+                        ∵f(x)的值域与f(x-3)的值域相同。
+                        <br>
+                        ∴答案为 [-3,0]→[-1,2]。
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="1.2"></a>
+                    2.常数/函数——极限
+                    <div class="cc-article">
+                        <div class="ib">已知 f(x)=(1/x^2+2) ，则函数 f(x) 的值域是什么？</div>
+                        ①先求f(x)最大值（f(x)小于什么）。
+                        <div class="a-article">
+                            ∵整体越大即(x^2+2)越小。
+                            <br>
+                            ∴ min(x^2+2) 为2, max(f(x)) 为1/2。
+                        </div>
+                        <br>
+                        ②再求f(x)最小值（f(x)大于什么）
+                        <div class="a-article">
+                            ∵整体越小即(x^2+2)越大。
+                            <br>
+                            ∴ max(x^2+2)=+∞ ， min(f(x))=1/+∞ 始终大于0。
+                        </div>
+                        ∴答案为 0＜f(x)≤(1/2)。
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="1.3"></a>
+                    3.半次+半次——前后次数一样，整体平方
+                    <div class="cc-article">
+                        <div class="ib">y=√(1+x) + √(1-x) 的值域是什么？</div>
+                        ①因为前后次数一样，所以整体平方，得 (1+x+1-x+2√((1+x)(1-x))) 即 (2+2√(1-x^2)。
+                        <br>
+                        ②√(1-x^2)取值区间用极限来做。
+                        <br>
+                        <div class="a-article">
+                            ∵ y=1-x^2 图像<a href="javascript:void(0)" onclick="javascript:showPic('../../image/study/math/(1-x×x).png')">如图</a>。
+                            <br>
+                            ∴ 0≤√(1-x^2)≤1 。
+                        </div>
+                        <br>
+                        ∴y²∈[2,4]
+                        <br>
+                        ∴y∈ [√2,2]或[-2,-√2]
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="1.4"></a>
+                    4.两类相加——分别画图
+                    <div class="cc-article">
+                        ①一次+反比例
+                        <div class="ib">f(x)=|x-2|+2-(1/x) 在区间(0,4]上的值域是什么？</div>
+                        <br>
+                        <div class="a-article">
+                            A1.绘制两函数图像，<a href="javascript:void(0)" onclick="javascript:showPic('../../image/study/math/1.4.1.png')">如图</a>。
+                            <br>
+                            A2.先求 f(x) 的最小值。
+                            <br>
+                            <div class="b-article">
+                                在(0,4]中，min(|x-2|+2) 为2， min(-1/x) 为 -∞。相加得-∞。
+                            </div>
+                            <br>
+                            A3.再求 f(x) 的最大值。
+                            <br>
+                            <div class="b-article">
+                                在(0,4]中，max(|x-2|+2) 为4， max(-1/x) 为 -0.25。相加得 15/4 。
+                            </div>
+                            <br>
+                            ∴答案为(-∞,15/4]。
+                        </div>
+                        <br>
+                        ②半次+指数
+                        <br>
+                        <div class="ib">f(x)=√(x-2)+2^x 的值域是什么？</div>
+                        <br>
+                        <div class="a-article">
+                            A1.绘制两函数图像，<a href="javascript:void(0)" onclick="javascript:showPic('../../image/study/math/1.4.2.png')">如图</a>。
+                            <br>
+                            A2.先求(√(x-2))的值域。
+                            <br>
+                            <div class="b-article">
+                                <code>注意定义域 x≥2。</code>
+                                <br>
+                                ∵min(√(x-2))=0，max(√(x-2))=+∞。
+                                <br>
+                                ∴0≤(√(x-2))＜+∞
+                            </div>
+                            A3.再求(2^x)的值域。
+                            <br>
+                            <div class="b-article">
+                                <code>注意定义域 x≥2。</code>
+                                <br>
+                                4≤(2^x)＜+∞。
+                            </div>
+                            <br>
+                            ∴答案为[4,+∞)。
+                        </div>
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="1.5"></a>
+                    5.一次+半次——凑半次
+                    <br>
+                    <div class="cc-article">
+                        <div class="ib">y=2x-√(x-1) 的值域是什么？</div>
+                        <br>
+                        ①先拼凑为一个“二次函数”。
+                        <br>
+                        <div class="a-article">
+                            <code>根式不动拼凑一次式。</code>
+                            <br>
+                            ∵根号中为(x-1)。
+                            <br>
+                            ∴将 2x 变为 2√(x-1)。即 y2=2(x-1)-√(x-1)<code>+2</code> → y3=2√((x-1)<code>^2</code>)-√(x-1)+2 。
+                        </div>
+                        <br>
+                        ②换元。
+                        <br>
+                        <div class="a-article">
+                            设 t=√(x-1),t≥0 。
+                            <br>
+                            ∴y4=2t²-t+2,t≥0。
+                        </div>
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="1.6"></a>
+                    6.一次比一次——值域≠一次比
+                    <br>
+                    <div class="cc-article">
+                        <div class="ib">f(x)=(2x+1)/(5x-2) 的值域是什么？</div>
+                        <br>
+                        ①答案
+                        <br>
+                        <div class="a-article">
+                            ∵上下的一次系数为2、5.
+                            <br>
+                            ∴答案为{y|y≠(2/5)}
+                        </div>
+                        <br>
+                        ②原理：使用分离常数法，凑分母。
+                        <br>
+                        ③拓展
+                        <br>
+                        <div class="ib">f(x)=(ax+b)/(cx+d) 的对称中心是什么？</div>
+                        <div class="a-article">
+                            <code>分母为0横坐标，一次之比纵坐标。</code>
+                            <br>
+                            ∴答案为(-d/c,a/c)。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a name="2"></a>
+            <h3>三角恒等变换公式集</h3>
+            <div class="article">
+                <div style="text-align: center;" class="div">
+                    <a href="triangle/index.html" target="new">链接</a>
+                </div>
+            </div>
+            <a name="3"></a>
+            <h3>向量</h3>
+            <div class="article">
+                <div class="div">
+                    <a name="3.1"></a>
+                    1.<b>a</b>⊥<b>b</b>，且<b>a</b>=(x1,y1)、<b>b</b>=(x2,y2)，则<b>a</b>·<b>b</b>=x1·y1+x2·y2。
+                </div>
+                <div class="div">
+                    <a name="3.2"></a>
+                    2.<b>a</b>∥<b>b</b>，且<b>a</b>=(x1,y1)、<b>b</b>=(x2,y2)，则x1·y2-x2·y1=0。
+                </div>
+                <div class="div">
+                    <a name="3.3"></a>
+                    3.投影式的变形
+                    <br>
+                    <div class="cc-article">
+                        <img src="res/project1.png">
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="3.4"></a>
+                    4.向量的余弦定理
+                    <br>
+                    <div class="cc-article">
+                        <img width="50%" height="50%" src="res/cos_def.png">
+                    </div>
+                </div>
+                <div class="div">
+                    <a name="3.5"></a>
+                    5.向量的正弦定理
+                    <br>
+                    <div class="cc-article">
+                        <img width="25%" height="25%" src="res/sin_def.png">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>

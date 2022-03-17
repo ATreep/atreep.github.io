@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta id="viewport" name="viewport"
+    content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+  <meta name="baidu-site-verification" content="Wn90yr5wWE">
+  <meta name="msvalidate.01" content="6709FC2D400F04DECE91EBC3C11E374E">
+  <meta name="title" content="EasyWeb IDE:Android端Web开发应用" />
+  <meta name="keywords" content="web,html,css,js,javascript,php,服务器,审查元素,安卓,android,easyweb,易站,gloriouspast,ide" />
+  <meta name="description" content="为Android触屏设备定制的Web开发工具,EasyWeb可以做什么？HTML、CSS、JavaScript、PHP、服务器搭建、像PC一样的审查元素" />
+  <meta itemprop="name" content="EasyWeb IDE·支持与帮助" />
+  <meta itemprop="image" content="http://gloriouspast.gitee.io/imgs/easyweb.png" />
+  <meta name="description" itemprop="description" content="一个Android上强大的Web开发工具。" />
+
+  <title>EasyWeb IDE • 支持与帮助</title>
+  <link href="../imgs/easyweb.png" rel="shortcut icon">
+  <link rel="icon" href="../imgs/easyweb.png">
+  <link rel="stylesheet" href="../styles/unpage.css" type="text/css">
+  <link rel="stylesheet" href="../styles/venterbutton.css" type="text/css">
+  <link rel="stylesheet" href="../styles/loading.css" type="text/css">
+  <script src='https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js' integrity='sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A' crossorigin='anonymous'></script>
+  <script src='https//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js'></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="video_cup"
+    style="position: fixed;width: 100%;height: 100%;text-align: center;background-color: rgba(0, 0, 0, 0.513);display: none;z-index: 1000;"
+    onclick="javascript:document.getElementById('video_cup').style.display='none'">
+  </div>
+  <div class="titlebar" id="title_bar">
+    <img src="image/easyweb_band.png" height="40px">
+  </div>
+  <div
+    style="background-image: url('image/bg.jpg');height: 400px;background-size: cover;background-repeat: no-repeat;background-position: center;opacity: 0.8;padding: 10px;line-height: 40px;">
+    <div style="color: white;font-size: 30px;padding-top: 200px;">为移动设备打造的强大生产力。</div>
+    <div style="padding-top: 20px;">
+      <vbtn show="white">EasyWeb IDE 支持与帮助</vbtn>
+    </div>
+  </div>
+  <div style="padding-top: 30px;">
+
+    <div style="padding: 10px;padding-top: 30px;">
+      <div id="tab" style="text-align: center;padding: 20px;color: gray;" class="adjustablebtnpanel">
+        <span class="adjustablebtn" id="videos_btn">视频演示</span>
+        <span class="adjustablebtn" id="articles_btn">公告与文档</span>
+        <span class="adjustablebtn" id="examples_btn">用户示例</span>
+        <span class="adjustablebtn" onclick="javascript:window.open('https://www.coolapk.com/apk/com.venter.easyweb')"
+          style="background-color: #FF8100;">获取应用</span>
+      </div>
+      <div id="listview" style="width: auto;text-align: center;padding: 10px;"></div>
+      <div>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" style="background-color:  #1DC9FF;margin: 10px;"
+          onclick="javascript:window.open('../index.html')"><img src="../imgs/venterlogoW.svg" width="20px"
+            alt=""></button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple shadow mdui-text-color-white" style="background-color:  #7620ff;margin: 10px;" onclick="javascript:window.open('https://jq.qq.com/?_wv=1027&k=n91bg1DW')"><i class="mdui-icon material-icons">&#xe0cb;</i></button>
+      </div>
+      <copyright/>
+    </div>
+    <script src="scripts/example_inf.js">
+    </script>
+    <script src="scripts/main.js">
+    </script>
+    <script src="../scripts/unpage.js"></script>
+    <script>
+      var url = "";
+      var hash = window.location.hash;
+      if (hash.indexOf("#") != -1) {
+        url = videoUrl + hash.split("#")[1] + videoType;
+        watch(url);
+      }
+    </script>
+</body>
+
+</html>

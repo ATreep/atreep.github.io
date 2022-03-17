@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport"
+        content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <style>
+        @font-face {
+            font-family: 'dx';
+            src: url("../../../fonts/dx.ttf");
+        }
+
+        body {
+            font-family: "dx";
+            position: relative;
+        }
+
+        code {
+            font-family: 'dx';
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: rgb(0, 132, 255);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        a:link {
+            color: rgb(0, 132, 255);
+            text-decoration: none;
+        }
+    </style>
+    <script src="../../scripts/example_inf.js"></script>
+</head>
+
+<body>
+    <div id="video_cup"
+        style="position: fixed;width: 100%;height: 100%;text-align: center;background-color: rgba(0, 0, 0, 0.513);display: none;"
+        onclick="javascript:document.getElementById('video_cup').style.display='none'">
+    </div>
+    <div id="listview" style="width: auto;text-align: center;padding: 10px;">
+
+    </div>
+    <script src="main.js"></script>
+    <script>
+        window.onload = function () {
+            var hast = window.location.hash;
+            if (hast.indexOf("#") != -1) {
+                var videoName=hast.split("#")[1];
+                if(videoName.indexOf(".")==-1)
+                {
+                    videoName+=videoType;
+                }
+                watch(videoUrl+videoName);
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../../imgs/easyweb.png" rel="shortcut icon">
+	<link rel="icon" href="../../../imgs/easyweb.png">
+	<title>EasyWeb IDE • 公告与文档</title>
+    <link href="../article.css" rel="stylesheet">
+    <script src="../../scripts/example_inf.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js'></script>
+</head>
+
+<body>
+    <div>
+        <div class="title">
+            「快速开始」页面自定义方法表及示例
+        </div>
+        <div class="subtitle">
+            2020.4.4修改后发布 | Treep
+        </div>
+        <article class="article">
+            <div class="add-msg-out">
+                <div class="add-msg-title">关注事项</div>
+                <li>
+                    只有 EasyWeb 2.2.3 及以上版本才支持自定义「快速开始」页面。
+                </li>
+            </div>
+            <br>
+            <div class="stitle">开始</div>
+            <div class="satc">
+                <span>在 EasyWeb 2.2.3
+                    版本中，你可以编写一个属于自己的精美主页并将它应用在「快速开始」页面。为了保证你的新主页可以与EasyWeb灵活交互（例如在你的自定义主页上添加一个“创建新项目”按钮），你有必要参考 EasyWeb
+                    为您提供的方法表（API）。当然 EasyWeb 为您准备了一些示例代码，帮助你快速理解一些API的作用。</span>
+                <br>
+                <span>你可以下载EasyWeb默认「快速开始」页面进行参考。<a href="javascript:void(0)"
+                        onclick="javascript:window.open(boxUrl+'welcome.zip')">点此下载</a>。</span>
+                <br>
+                <span>这里有一个自定义「快速开始」页面的演示视频，<a href="javascript:void(0)"
+                        onclick="javascript:window.open('../../index.html#7')">点此查看</a>。</span>
+            </div>
+            <span class="stitle">方法表（API）</span>
+            <div class="satc">
+                <div>
+                    <span style="font-weight: bold;font-style: italic;">仪表盘</span>
+                    <div style="padding: 10px;">
+                        <a href="#createWebsite">●createWebsite()</a>
+                        <br>
+                        <a href="#createTempWebsite">●createTempWebsite()</a>
+                        <br>
+                        <a href="#createFileType">●createFileType()</a>
+                        <br>
+                        <a href="#openURL">●openURL(String url)</a>
+                        <br>
+                        <a href="#getTheme">●getTheme()</a>
+                        <br>
+                        <a href="#isLogined">●isLogined()</a>
+                        <br>
+                        <a href="#showLogin">●showLogin()</a>
+                        <br>
+                        <a href="#hasRecover">●hasRecover()</a>
+                        <br>
+                        <a href="#delRecover">●delRecover()</a>
+                        <br>
+                        <a href="#getRecoverTime">●getRecoverTime()</a>
+                        <br>
+                        <a href="#recover">●recover()</a>
+                        <br>
+                        <a href="#getRecentProjects">●getRecentProjects()</a>
+                        <br>
+                        <a href="#openRecentWebsite">●openRecentWebsite(int index)</a>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <span style="font-weight: bold;font-style: italic;">表</span>
+                    <div style="padding: 10px;">
+                        <div style="padding: 10px;">
+                            <a name="createWebsite"></a>
+                            <code>EasyWeb.createWebsite()</code>
+                            <br>
+                            <span>弹出创建站点对话框。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="createTempWebsite"></a>
+                            <code>EasyWeb.createTempWebsite()</code>
+                            <br>
+                            <span>创建临时站点。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="createFileType"></a>
+                            <code>EasyWeb.createFileType()</code>
+                            <br>
+                            <span>弹出新建文件类型对话框。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="openURL"></a>
+                            <code>EasyWeb.openURL(String url)</code>
+                            <br>
+                            <span>使用第三方浏览器打开指定url。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>String url:指定打开的链接（如："http://www.example.com/"）。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="getTheme"></a>
+                            <code>EasyWeb.getTheme()</code>
+                            <br>
+                            <span>获取当前应用主题值。</span>
+                            <br>
+                            <span>返回 int 类型主题值。[-1:默认,0:经典,1:夜间,2:清新,3:淡雅]</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="isLogined"></a>
+                            <code>EasyWeb.isLogined()</code>
+                            <br>
+                            <span>获取是否创建过本地账户。</span>
+                            <br>
+                            <span>返回 boolean 类型值。[true:已创建本地账户,false:未创建本地账户]</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="showLogin"></a>
+                            <code>EasyWeb.showLogin()</code>
+                            <br>
+                            <span>弹出创建本地账户对话框。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="hasRecover"></a>
+                            <code>EasyWeb.hasRecover()</code>
+                            <br>
+                            <span style="font-style: italic;">EasyWeb为您准备了“恢复模式”示例，请转至下一部分。</span>
+                            <br>
+                            <span>获取是否存在备份。</span>
+                            <br>
+                            <span>返回 boolean 类型值。[true:存在上一次的备份。,false:没有上一次的备份]</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="delRecover"></a>
+                            <code>EasyWeb.delRecover()</code>
+                            <br>
+                            <span>若存在备份则删除备份。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="getRecoverTime"></a>
+                            <code>EasyWeb.getRecoverTime()</code>
+                            <br>
+                            <span>若存在备份则获取备份创建时间。</span>
+                            <br>
+                            <span>返回 String 类型值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="recover"></a>
+                            <code>EasyWeb.recover()</code>
+                            <br>
+                            <span>若存在备份则立即恢复工作区。若无备份则不要调用此方法。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="getRecentProjects"></a>
+                            <code>EasyWeb.getRecentProjects()</code>
+                            <br>
+                            <span style="font-style: italic;">EasyWeb为您准备了“罗列最近项目”示例，请转至下一部分。</span>
+                            <br>
+                            <span>获取最近打开的项目（最多最近5个项目）。</span>
+                            <br>
+                            <span>返回 String 类型值。</span>
+                            <br>
+                            <span>无参数。</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <a name="openRecentWebsite"></a>
+                            <code>EasyWeb.openRecentWebsite(int index)</code>
+                            <br>
+                            <span>打开指定的最近项目。</span>
+                            <br>
+                            <span>无返回值。</span>
+                            <br>
+                            <span>int index:项目索引。使用 EasyWeb.getRecentProjects() 方法获取到一个数组后，此参数则对应数组索引。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="stitle">示例</span>
+            <div class="satc">
+                <span style="font-weight: bold;font-style: italic;">“恢复模式示例”</span>
+                <div>
+                    index.html:
+                    <br>
+                    <div>
+                        <pre>
+                            <code class="lang-html">
+&lt;html&gt;
+    ······
+    &lt;div id="recover"&gt;
+        &lt;span&gt;来自上一次的备份&lt;/span&gt;
+        &lt;br&gt;
+        &lt;button type="button" id="recover_btn" onclick="javascript:EasyWeb.recover()"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    ······
+&lt;/html&gt;
+                                </code>
+                        </pre>
+                    </div>
+                    main.js:
+                    <div>
+                        <pre>
+        <code class="lang-javascript">
+var recover=document.getElementById("recover");//获取显示恢复区域的div。
+var recover_btn=document.getElementById("recover_btn");
+if(EasyWeb.hasRecover)
+{
+    //存在备份
+    var time=EasyWeb.getRecoverTime();//获取备份创建时间。
+    recover_btn.innerHTML=time+"的备份";
+}
+else
+{
+    //不存在备份，隐藏恢复div。
+    recover.style.display="none";
+}
+        </code>
+    </pre>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <span style="font-weight: bold;font-style: italic;">“最近项目示例”</span>
+                <div>
+                    index.html:
+                    <div>
+                        <pre>
+                    <code class="lang-html">
+&lt;html&gt;
+    ······
+    &lt;div id="recent"&gt;
+    &lt;/div&gt;
+    ······
+&lt;/html&gt;
+                        </code>
+                </pre>
+                    </div>
+                    main.js:
+                    <div>
+                        <pre>
+            <code class="lang-javascript">
+var recent=document.getElementById("recent");
+var recentArrayStr=EasyWeb.getRecentProjects();//EasyWeb.getRecentProjects()方法会返回JSON数组字符串或"null"（当无最近项目时返回"null"）。
+var recentArray;
+if(recentArrayStr=="null")
+{
+    recent.style.diaplay="none";//若无最近项目则隐藏div。
+}
+else
+{
+    recentArray=eval(recentArrayStr);//使用eval()函数将数组字符串返回为数组。
+    for(i=0;i<recentArray.lemgth;i++)
+    {
+        recent.innerHTML+="<span onclick='javascript:EasyWeb.openRecentWebsite("+i+")'>"+recentArray[i]+"</span><br>";
+    }
+}
+            </code>
+        </pre>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </div>
+    <script src="../article_ct.js"></script>
+</body>
+
+</html>
