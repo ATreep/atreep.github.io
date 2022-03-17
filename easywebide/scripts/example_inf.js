@@ -1,4 +1,4 @@
-var hostUrl = "http://atreep.github.io/easywebide";
+var hostUrl = "https://atreep.netlify.app/easywebide";
 var videoUrl = hostUrl+"/videos/";
 var serverUrl = "https://venter.coding.net/p/gloriouspast/d/gloriouspast/git/raw/master/";
 var boxUrl = serverUrl+"box/";
