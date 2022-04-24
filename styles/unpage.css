@@ -2,8 +2,8 @@
 @import"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/atom-one-dark.min.css";
 
 @font-face {
-    font-family: 'google';
-    src: url("../fonts/google.ttf");
+    font-family: 'goople';
+    src: url("../fonts/goople.ttf");
 }
 
 @font-face {
@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: "google";
+    font-family: "goople";
     text-align: center;
     padding: 0px;
     margin: 0px;
